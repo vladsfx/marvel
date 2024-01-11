@@ -31,7 +31,7 @@ class RandomChar extends Component {
         });
     }
 
-    onCharLoading = ()=>{
+    onCharLoading = () => {
         this.setState({
             loading: true
         });
@@ -51,6 +51,15 @@ class RandomChar extends Component {
             .getCharacter(id)
             .then(this.onCharLoaded)
             .catch(this.onError);
+    }
+
+    changePicture = () => {
+        this.updateChar();
+        if (this.state.error === true) {
+            this.setState({
+                error: false
+            });
+        }
     }
 
 
@@ -73,7 +82,7 @@ class RandomChar extends Component {
                     <p className="randomchar__title">
                         Or choose another one
                     </p>
-                    <button className="button button__main" onClick={this.updateChar}>
+                    <button className="button button__main" onClick={this.changePicture}>
                         <div className="inner">try it</div>
                     </button>
                     <img src={mjolnir} alt="mjolnir" className="randomchar__decoration" />
