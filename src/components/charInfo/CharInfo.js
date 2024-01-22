@@ -83,7 +83,8 @@ const View = ({ char }) => {
 
     let imgStyle = { 'objectFit': 'cover' };
     const notImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
-    if (thumbnail === notImage) {
+    const notAvailable = 'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif';
+    if (thumbnail === notImage || thumbnail === notAvailable) {
         imgStyle = { 'objectFit': 'unset' };
     }
 
@@ -125,7 +126,7 @@ const View = ({ char }) => {
 }
 
 CharInfo.propTypes = {
-    charId: PropTypes.string
+    charId: PropTypes.number
 }
 
 export default CharInfo;
