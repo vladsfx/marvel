@@ -1,0 +1,11 @@
+@import '../../style/variables.scss';
+
+.link-error{
+    display: block;
+    text-align: center; 
+    font-weight: bold; 
+    font-size: 24px;
+    margin-top: 30px;
+    color: $blue;
+    text-decoration: underline;
+}
