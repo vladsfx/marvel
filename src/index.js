@@ -6,7 +6,7 @@ import './style/style.scss';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-    <StrictMode>S
+    <StrictMode>
         <App />
     </StrictMode>
 );
