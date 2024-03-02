@@ -10,20 +10,18 @@ export const useHttp = () => {
 
         try {
             const response = await fetch(url, { method, body, headers });
-
             if (!response.ok) {
                 throw new Error(`Cold not fetch ${url}, status: ${response.status}`);
             }
-
             const data = await response.json();
 
             setLoading(false);
             return data;
 
-        } catch (error) {
+        } catch (e) {
             setLoading(false);
-            setError(error.message);
-            throw error;
+            setError(e.message);
+            throw e;
         }
     }, []);
 
